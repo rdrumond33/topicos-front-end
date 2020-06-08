@@ -9,12 +9,11 @@ import { LoginService } from '../login.service';
 })
 export class LoginListarComponent implements OnInit {
 
-
   result: Login[]
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
     this.loginService.get().subscribe(res=> this.result = res)
+    console.log(this.result)
   }
-
 }

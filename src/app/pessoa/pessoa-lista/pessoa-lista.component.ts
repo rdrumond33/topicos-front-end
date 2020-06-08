@@ -9,10 +9,10 @@ import { PessoaService } from '../pessoa.service';
   styleUrls: ['./pessoa-lista.component.css']
 })
 export class PessoaListaComponent implements OnInit {
-  resultPessoas: Pessoa[]
+  result: Pessoa[]
   constructor(private pessoaService: PessoaService) { }
 
   ngOnInit(): void {
-   this.pessoaService.getPessoas().subscribe(res=> this.resultPessoas = res)
+   this.pessoaService.getPessoas().subscribe(res=> this.result = res)
   }
 }
