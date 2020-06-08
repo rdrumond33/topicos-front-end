@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Grupo } from '../grupo-interface';
+import { GrupoService } from '../grupo.service';
 
 @Component({
   selector: 'app-grupo-litar',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GrupoLitarComponent implements OnInit {
 
-  constructor() { }
+  result: Grupo[]
+  constructor(private grupoService: GrupoService) { }
 
   ngOnInit(): void {
+    this.grupoService.get().subscribe(res=> this.result = res)
   }
 
 }

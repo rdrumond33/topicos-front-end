@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Pessoagrupo } from '../pessoagrupo-interface';
+import { PessoagrupoService } from '../pessoagrupo.service';
 
 @Component({
   selector: 'app-pessoagrupo-listar',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PessoagrupoListarComponent implements OnInit {
 
-  constructor() { }
+  result: Pessoagrupo[]
+  constructor(private pessoagrupoService: PessoagrupoService) { }
 
   ngOnInit(): void {
+    this.pessoagrupoService.get().subscribe(res=> this.result = res)
   }
-
 }

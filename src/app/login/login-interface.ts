@@ -1,4 +1,4 @@
- export interface login{
+ export interface Login{
     password:string;
     user:string;
     id_perfil:number;

@@ -1,4 +1,4 @@
-export interface grupo{
+export interface Grupo{
   id:number;
   nome:string;
 }

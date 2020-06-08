@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Login } from '../login-interface';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-login-listar',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginListarComponent implements OnInit {
 
-  constructor() { }
+
+  result: Login[]
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
+    this.loginService.get().subscribe(res=> this.result = res)
   }
 
 }

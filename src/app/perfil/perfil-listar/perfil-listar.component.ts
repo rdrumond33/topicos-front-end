@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Perfil } from '../perfil-interface';
+import { PerfilService } from '../perfil.service';
 
 @Component({
   selector: 'app-perfil-listar',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilListarComponent implements OnInit {
 
-  constructor() { }
+
+  result: Perfil[]
+  constructor(private perfilService: PerfilService) { }
 
   ngOnInit(): void {
+    this.perfilService.get().subscribe(res=> this.result = res)
   }
 
 }
