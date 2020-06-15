@@ -1,4 +1,5 @@
 export interface Perfilrecurso{
   id:number;
-  descricao:string;
+  id_perfil:Number;
+  id_recurso:Number;
 }

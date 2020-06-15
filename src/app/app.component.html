@@ -1,7 +1,13 @@
-<div>
-  <a [routerLink]="['/pessoas']" >pessoas </a>
-  <a [routerLink]="['/grupos']" >grupos </a>
-  <a [routerLink]="['/recursos']" >recursos </a>
-
+<div class="container">
+  <div class="row">
+    <a [routerLink]="['/anotacao']" type="button" class="btn btn-primary">Anotação </a>
+    <a [routerLink]="['/grupos']"  type="button" class="btn btn-primary"> Grupos </a>
+    <a [routerLink]="['/login']"   type="button" class="btn btn-primary"> Login </a>
+    <a [routerLink]="['/perfil']" type="button" class="btn btn-primary">Prefil </a>
+    <a [routerLink]="['/perfilrecurso']" type="button" class="btn btn-primary">PerfilRecurso </a>
+    <a [routerLink]="['/pessoas']" type="button" class="btn btn-primary">Pessoas </a>
+    <a [routerLink]="['/pessoasgrupo']" type="button" class="btn btn-primary">Pessoas-Grupo </a>
+    <a [routerLink]="['/recursos']" type="button" class="btn btn-primary">recursos </a>
+  </div>
   <router-outlet></router-outlet>
 </div>

@@ -14,7 +14,9 @@ export class PerfilListarComponent implements OnInit {
   constructor(private perfilService: PerfilService) { }
 
   ngOnInit(): void {
-    this.perfilService.get().subscribe(res=> this.result = res)
+    this.perfilService.get().subscribe(res=> {
+      console.log(res)
+      this.result = res})
   }
 
 }

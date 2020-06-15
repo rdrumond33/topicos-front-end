@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./perfil/perfil.module').then((p) => p.PerfilModule),
   }, {
-    path: 'perfilRecurso',
+    path: 'perfilrecurso',
     loadChildren: () =>
       import('./perfilrecurso/perfilrecurso.module').then((p) => p.PerfilrecursoModule),
   }, {

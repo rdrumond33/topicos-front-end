@@ -1,4 +1,9 @@
 export interface Pessoagrupo{
   id:number;
-  descricap:string;
+  papel:string;
+  semestre:Number;
+  ano:Number;
+  id_grupo:Number;
+  id_pessoa:Number;
+
 }
