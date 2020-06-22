@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pessoa } from '../pessoa.interface';
 import { PessoaService } from '../pessoa.service';
+import { Location } from '@angular/router';
 
 
 @Component({
@@ -14,5 +15,18 @@ export class PessoaListaComponent implements OnInit {
 
   ngOnInit(): void {
    this.pessoaService.getPessoas().subscribe(res=> this.result = res)
+  }
+
+  apagar(id: number)
+  {
+    this.pessoaService.deletePessoa(id).subscribe(
+      data=>{
+        this.location.path();
+      },
+      error=>
+      {
+
+      }
+    );
   }
 }
