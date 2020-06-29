@@ -4,7 +4,6 @@ import { Pessoa } from '../pessoa.interface';
 import { Router } from '@angular/router';
 import { PessoaService } from '../pessoa.service';
 
-
 @Component({
   selector: 'app-pessoa-formulario',
   templateUrl: './pessoa-formulario.component.html',
@@ -21,7 +20,6 @@ export class PessoaFormularioComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
 
   salvar(pessoa): void{
     this.service.postPessoa(pessoa).subscribe(
