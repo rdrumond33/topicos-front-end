@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GrupoFormularioComponent } from './grupo-formulario/grupo-formulario.component';
-
+import { GrupoFormularioComponent } from './grupo-formulario.component';
 
 describe('GrupoFormularioComponent', () => {
   let component: GrupoFormularioComponent;
@@ -20,7 +19,7 @@ describe('GrupoFormularioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });
