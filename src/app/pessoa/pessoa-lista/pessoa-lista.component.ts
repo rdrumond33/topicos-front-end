@@ -1,24 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { Pessoa } from '../pessoa.interface';
-import { PessoaService } from '../pessoa.service';
 
+import { Pessoa } from '../pessoa.interface';
+import { Observable } from 'rxjs'
+import { PessoaService } from '../pessoa.service'
 
 @Component({
   selector: 'app-pessoa-lista',
   templateUrl: './pessoa-lista.component.html',
   styleUrls: ['./pessoa-lista.component.css']
 })
+
 export class PessoaListaComponent implements OnInit {
-  result: Pessoa[]
-  constructor(private pessoaService: PessoaService) { }
+
+  pessoas : Observable<Pessoa>;
+
+  constructor(private service: PessoaService) { }
 
   ngOnInit(): void {
-   this.pessoaService.getPessoas().subscribe(res=> this.result = res)
-
+    this.pessoas = this.service.getPessoa();
   }
 
   apagar(id: number)
   {
-    this.pessoaService.deletePessoa(id).subscribe();
+    this.service.deletePessoa(id).subscribe();
   }
+
 }

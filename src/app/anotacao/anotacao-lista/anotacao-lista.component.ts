@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Anotacao } from '../anotacao-interface';
-import { AnotacaoService } from '../anotacao.service';
+
+import { Anotacao } from '../anotacao.interface';
+import { Observable } from 'rxjs'
+import { AnotacaoService } from '../anotacao.service'
 
 @Component({
   selector: 'app-anotacao-lista',
@@ -8,11 +10,17 @@ import { AnotacaoService } from '../anotacao.service';
   styleUrls: ['./anotacao-lista.component.css']
 })
 export class AnotacaoListaComponent implements OnInit {
-  result: Anotacao[]
-  constructor(private anotacaoService: AnotacaoService) { }
+
+  anotacoes : Observable<Anotacao>;
+
+  constructor(private service: AnotacaoService) { }
 
   ngOnInit(): void {
-    this.anotacaoService.get().subscribe(res=> this.result = res)
+    this.anotacoes = this.service.getAnotacao();
+  }
+  apagar(id: number)
+  {
+    this.service.deleteAnotacao(id).subscribe();
   }
 
 }

@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PerfilListarComponent } from './perfil-listar/perfil-listar.component';
-import { PerfilFormularioComponent } from './perfil-formulario/perfil-formulario.component';
+import { PerfilListaComponent } from './perfil-lista/perfil-lista.component';
+import { PerfilFormComponent } from './perfil-form/perfil-form.component';
+
 
 const routes: Routes = [
   {
-    path:'',
-    component:PerfilListarComponent
+    path: '',
+    component: PerfilListaComponent
   },
   {
-    path:'form',
-    component: PerfilFormularioComponent
+    path: 'form',
+    component: PerfilFormComponent
   }
 ];
 

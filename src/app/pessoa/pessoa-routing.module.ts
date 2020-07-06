@@ -6,11 +6,11 @@ import { PessoaFormularioComponent } from './pessoa-formulario/pessoa-formulario
 
 const routes: Routes = [
   {
-    path:'',
-    component:PessoaListaComponent
+    path: '',
+    component: PessoaListaComponent
   },
   {
-    path:'form',
+    path: 'form',
     component: PessoaFormularioComponent
   }
 ];

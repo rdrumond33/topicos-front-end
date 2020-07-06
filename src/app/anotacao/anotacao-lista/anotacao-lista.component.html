@@ -1,38 +1,19 @@
-<div class="topo row p-2">
-  <h2>Lista de Anotações</h2>
-</div>
-  <div class="m-2">
-      <a [routerLink]="['/anotacao/form']" type="button" class="btn btn-primary"> Nova Anotação </a>
-  </div>
-<div class="card m-4 p-4">
-  <table class="table table-striped">
-      <thead>
-      <tr>
-          <th scope="col">ID</th>
-          <th scope="col">obs</th>
-          <th scope="col">data</th>
-          <th scope="col">id_grupo</th>
-          <th scope="col">id_pessoa</th>
-          <th scope="col">pessoa</th>
-          <th scope="col">grupo</th>
-          <th scope="col">Button</th>
-      </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let p of result">
-          <td>{{p.id}}</td>
-          <td>{{p.obs}}</td>
-          <td>{{p.data}}</td>
-          <td>{{p.id_grupo}}</td>
-          <td>{{p.id_pessoa}}</td>
-          <td>{{p.pessoa.nome}}</td>
-          <td>{{p.grupo.nome}}</td>
-
-          <td>
-              <button type="button" class="btn btn-warning">Editar</button>
-              <button type="button" class="btn btn-danger">Deletar</button>
-            </td>
-      </tr>
-      </tbody>
-  </table>
+<div class="col-xs-12" style="height: 50px;"></div>
+<div class="mx-auto" style="width: 1000px;">
+    <div>
+        <button type="button" class="btn btn-primary btn-lg" [routerLink]="['/anotacao/form']">Novo</button>
+    </div>
+    <h1 class="m-4" for="anotacao">Lista de Anotações</h1>
+    <br>
+    <div class="row">
+        <div class="mx auto col-sm-4" *ngFor="let anotacao of anotacoes | async">
+            <div class="card" style="width: 18rem ;">
+                <img src="https://picsum.photos/200/50" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Anotação: {{ anotacao.obs }}</h5>
+                    <a href="/anotacao" class="mr-1 btn btn-danger" (click)="apagar(anotacao.id)">Apagar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

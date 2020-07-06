@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FormsModule } from '@angular/forms';
 import { Pessoa } from '../pessoa.interface';
-import { Router } from '@angular/router';
 import { PessoaService } from '../pessoa.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pessoa-formulario',
@@ -11,20 +12,21 @@ import { PessoaService } from '../pessoa.service';
 })
 export class PessoaFormularioComponent implements OnInit {
 
-  pessoa: Pessoa = {
-    id: Math.floor(1000000*Math.random()),
+  pessoa: Pessoa =
+  {
+    id: Math.floor(100000000*Math.random()),
     nome: ''
   }
-  constructor(private service: PessoaService, private router: Router) { }
+
+  constructor(private service:PessoaService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-
-  salvar(pessoa): void{
+  salvar(pessoa: Pessoa): void{
     this.service.postPessoa(pessoa).subscribe(
       data=>{
-        this.router.navigate(['/pessoas']);
+        this.router.navigate(['/pessoas'])
       },
       error=>
       {

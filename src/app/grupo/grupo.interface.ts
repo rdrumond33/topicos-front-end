@@ -1,4 +1,4 @@
-export interface Pessoa {
+export interface Grupo {
     id: number;
     nome: string;
 }

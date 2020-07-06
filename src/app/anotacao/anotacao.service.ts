@@ -1,29 +1,27 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+
+import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { Anotacao } from './anotacao-interface';
-import { HttpClient } from '@angular/common/http';
+import { Anotacao } from './anotacao.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnotacaoService {
-  private uri = 'http://localhost:5003/api/anotacoes/0/100'
 
   constructor(private http: HttpClient) { }
 
- get(): Observable<Anotacao[]>{
-    return this.http.get<Anotacao[]>(this.uri)
+  getAnotacao() : Observable<any>{
+    return this.http.get('https://localhost:5002/api/anotacoes/1/100')
   }
 
-  postAnotacao(anotacao: Anotacao): Observable<Anotacao>
+  postAnotacao(anotacao: Anotacao) : Observable<Anotacao>
   {
-    return this.http.post<Anotacao>('http://localhost:5003/api/anotacoes', anotacao);
+    return this.http.post<Anotacao>('https://localhost:5002/api/anotacoes', anotacao);
   }
 
-  deleteAnotacao(id: number): Observable<Anotacao>
+  deleteAnotacao(id : number) : Observable<Anotacao>
   {
-    return this.http.delete<Anotacao>('http://localhost:5003/api/anotacoes/'+id);
-
+    return this.http.delete<Anotacao>('https://localhost:5002/api/anotacoes/'+id);
   }
 }

@@ -1,17 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Perfil } from './perfil-interface';
+import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Perfil } from './perfil.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerfilService {
-  private uri = 'http://localhost:5003/api/perfis/0/100'
 
   constructor(private http: HttpClient) { }
 
-  get():Observable<Perfil[]>{
-    return this.http.get<Perfil[]>(this.uri)
+  getPerfil() : Observable<any>{
+    return this.http.get('https://localhost:5002/api/perfis/1/100')
+  }
+
+  postPerfil(perfil: Perfil) : Observable<Perfil>
+  {
+    return this.http.post<Perfil>('https://localhost:5002/api/perfis', perfil);
+  }
+
+  deletePerfil(id : number) : Observable<Perfil>
+  {
+    return this.http.delete<Perfil>('https://localhost:5002/api/perfis/'+id);
   }
 }

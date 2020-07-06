@@ -1,26 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import { GrupoFormularioComponent } from './grupo-formulario/grupo-formulario.component';
+import { GrupoService } from './grupo.service';
 
-
-describe('GrupoFormularioComponent', () => {
-  let component: GrupoFormularioComponent;
-  let fixture: ComponentFixture<GrupoFormularioComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ GrupoFormularioComponent ]
-    })
-    .compileComponents();
-  }));
+describe('GrupoService', () => {
+  let service: GrupoService;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GrupoFormularioComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(GrupoService);
   });
 
   it('should be created', () => {
-    expect(component).toBeTruthy();
+    expect(service).toBeTruthy();
   });
 });

@@ -1,29 +1,28 @@
 import { Injectable } from '@angular/core';
-import { Grupo } from './grupo-interface';
+
+import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { Grupo } from './grupo.interface';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class GrupoService {
-  private uri = 'http://localhost:5003/api/grupos/0/100'
 
   constructor(private http: HttpClient) { }
 
-  get(): Observable<Grupo[]>{
-    return this.http.get<Grupo[]>(this.uri)
+  getGrupo() : Observable<any>{
+    return this.http.get('https://localhost:5002/api/grupos/1/100')
   }
 
-  postGrupo(grupo: Grupo): Observable<Grupo>
+  postGrupo(grupo: Grupo) : Observable<Grupo>
   {
-    return this.http.post<Grupo>('http://localhost:5003/api/grupos', grupo);
+    return this.http.post<Grupo>('https://localhost:5002/api/grupos', grupo);
   }
 
-  deleteGrupo(id: number): Observable<Grupo>
+  deleteGrupo(id : number) : Observable<Grupo>
   {
-    return this.http.delete<Grupo>('http://localhost:5003/api/grupos/'+id);
-
+    return this.http.delete<Grupo>('https://localhost:5002/api/grupos/'+id);
   }
 }
