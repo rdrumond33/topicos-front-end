@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from '../login-interface';
 import { LoginService } from '../login.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login-listar',
@@ -9,10 +10,16 @@ import { LoginService } from '../login.service';
 })
 export class LoginListarComponent implements OnInit {
 
-  result: Login[]
+  results:  Observable<Login>
   constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
-    this.loginService.get().subscribe(res=> this.result = res)
+    this.results = this.loginService.get()
   }
+
+  apagar(id: number)
+  {
+    this.loginService.deletar(id).subscribe();
+  }
+
 }

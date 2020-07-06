@@ -1,37 +1,23 @@
-<div class="topo row p-2">
-  <h2>Lista de Usuários</h2>
-</div>
-  <div class="m-2">
-      <a href="file:///C:/Users/Marki/sistema/AtividadeFront/add.html"><button type="button" class="btn btn-primary">Adicionar Novo</button></a>
-  </div>
-<div class="card m-4 p-4">
-  <table class="table table-striped">
-      <thead>
-      <tr>
-          <th scope="col">ID</th>
-          <th scope="col">User</th>
-          <th scope="col">id_perfil</th>
-          <th scope="col">id_pessoa</th>
-          <th scope="col">password</th>
-          <th scope="col">Pessoa</th>
-
-          <th scope="col">Button</th>
-      </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let p of result">
-          <td>{{p.id}}</td>
-          <td>{{p.user}}</td>
-          <td>{{p.id_perfil}}</td>
-          <td>{{p.id_pessoa}}</td>
-          <td>{{p.password}}</td>
-          <td>{{p.pessoa.id}}-{{p.pessoa.nome}}</td>
-
-          <td>
-              <button type="button" class="btn btn-warning">Editar</button>
-              <button type="button" class="btn btn-danger">Deletar</button>
-            </td>
-      </tr>
-      </tbody>
-  </table>
+<div class="col-xs-12" style="height: 50px;"></div>
+<div class="mx-auto" style="width: 1000px;">
+    <div>
+        <button type="button" class="btn btn-primary btn-lg">Novo</button>
+    </div>
+    <h1 class="m-4" for="pessoas">Lista de Logins</h1>
+    <br>
+    <div class="row">
+        <div class="mx auto col-sm-4" *ngFor="let result of results | async">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem ;">
+                <div class="card-body">
+                    <h5 class="card-title">ID: {{ result.id }}</h5>
+                    <h5 class="card-title">Usuario: {{ result.user}}</h5>
+                    <h5 class="card-title">Perfil: {{ result.id_perfil}}</h5>
+                    <h5 class="card-title">ID-pessoa: {{ result.id_pessoa}}</h5>
+                    <h5 class="card-title">Senha: {{ result.password}}</h5>
+                    <h5 class="card-title">Pessoa: {{ result.pessoa.nome}}</h5>
+                    <a href="/login" class="mr-1 btn btn-danger" (click)="apagar(result.id)">Apagar</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

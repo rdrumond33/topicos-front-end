@@ -10,7 +10,11 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
 
-  get():Observable<Login[]>{
-    return this.http.get<Login[]>(this.uri)
+  get():Observable<any>{
+    return this.http.get("https://localhost:5002/api/logins/0/100")
+  }
+  deletar(id : number) : Observable<Login>
+  {
+    return this.http.delete<Login>('https://localhost:5002/api/logins/'+id);
   }
 }

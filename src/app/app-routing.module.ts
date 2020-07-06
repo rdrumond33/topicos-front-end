@@ -23,8 +23,11 @@ const routes: Routes = [
   {
     path:'anotacao',
     loadChildren:() => import('./anotacao/anotacao.module').then(p=>p.AnotacaoModule)
+  },
+  {
+    path:'login',
+    loadChildren:() => import('./login/login.module').then(p=>p.LoginModule)
   }
-
 ];
 
 @NgModule({
