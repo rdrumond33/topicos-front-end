@@ -8,22 +8,22 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AnotacaoService {
-  private uri = 'https://localhost:5002/api/anotacoes'
+  private uri = 'http://localhost:5003/api/anotacoes/0/100'
 
   constructor(private http: HttpClient) { }
 
- getAnotacao(): Observable<Anotacao[]>{
+ get(): Observable<Anotacao[]>{
     return this.http.get<Anotacao[]>(this.uri)
   }
 
   postAnotacao(anotacao: Anotacao): Observable<Anotacao>
   {
-    return this.http.post<Anotacao>('https://localhost:5002/api/anotacoes', anotacao);
+    return this.http.post<Anotacao>('http://localhost:5003/api/anotacoes', anotacao);
   }
 
   deleteAnotacao(id: number): Observable<Anotacao>
   {
-    return this.http.delete<Anotacao>('https://localhost:5002/api/anotacoes/'+id);
-    
+    return this.http.delete<Anotacao>('http://localhost:5003/api/anotacoes/'+id);
+
   }
 }

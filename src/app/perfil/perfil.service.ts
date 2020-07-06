@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PerfilService {
-  private uri = 'https://localhost:5002/api/perfis'
+  private uri = 'http://localhost:5003/api/perfis/0/100'
 
   constructor(private http: HttpClient) { }
 

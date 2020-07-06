@@ -7,23 +7,23 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class PessoaService {
-  private uri = 'https://localhost:5002/api/grupos'
+export class GrupoService {
+  private uri = 'http://localhost:5003/api/grupos/0/100'
 
   constructor(private http: HttpClient) { }
 
-  getGrupo(): Observable<Grupo[]>{
+  get(): Observable<Grupo[]>{
     return this.http.get<Grupo[]>(this.uri)
   }
 
   postGrupo(grupo: Grupo): Observable<Grupo>
   {
-    return this.http.post<Grupo>('https://localhost:5002/api/grupos', grupo);
+    return this.http.post<Grupo>('http://localhost:5003/api/grupos', grupo);
   }
 
   deleteGrupo(id: number): Observable<Grupo>
   {
-    return this.http.delete<Grupo>('https://localhost:5002/api/grupos/'+id);
-    
+    return this.http.delete<Grupo>('http://localhost:5003/api/grupos/'+id);
+
   }
 }

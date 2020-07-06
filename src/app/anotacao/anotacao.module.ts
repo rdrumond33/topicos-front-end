@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule }   from '@angular/forms';
 
 import { AnotacaoRoutingModule } from './anotacao-routing.module';
 import { AnotacaoListaComponent } from './anotacao-lista/anotacao-lista.component';
@@ -10,7 +11,8 @@ import { AnotacaoFormularioComponent } from './anotacao-formulario/anotacao-form
   declarations: [AnotacaoListaComponent, AnotacaoFormularioComponent],
   imports: [
     CommonModule,
-    AnotacaoRoutingModule
+    AnotacaoRoutingModule,
+    FormsModule
   ]
 })
 export class AnotacaoModule { }

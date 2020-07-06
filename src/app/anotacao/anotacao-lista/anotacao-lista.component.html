@@ -13,6 +13,8 @@
           <th scope="col">data</th>
           <th scope="col">id_grupo</th>
           <th scope="col">id_pessoa</th>
+          <th scope="col">pessoa</th>
+          <th scope="col">grupo</th>
           <th scope="col">Button</th>
       </tr>
       </thead>
@@ -23,6 +25,9 @@
           <td>{{p.data}}</td>
           <td>{{p.id_grupo}}</td>
           <td>{{p.id_pessoa}}</td>
+          <td>{{p.pessoa.nome}}</td>
+          <td>{{p.grupo.nome}}</td>
+
           <td>
               <button type="button" class="btn btn-warning">Editar</button>
               <button type="button" class="btn btn-danger">Deletar</button>

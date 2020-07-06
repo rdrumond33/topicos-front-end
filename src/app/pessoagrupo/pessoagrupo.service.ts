@@ -7,7 +7,7 @@ import { Pessoagrupo } from './pessoagrupo-interface';
   providedIn: 'root'
 })
 export class PessoagrupoService {
-  private uri = 'https://localhost:5002/api/pessoagrupos'
+  private uri = 'http://localhost:5003/api/pessoagrupos/0/100'
 
   constructor(private http: HttpClient) { }
 

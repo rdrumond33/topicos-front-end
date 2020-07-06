@@ -14,6 +14,7 @@ export class PessoaListaComponent implements OnInit {
 
   ngOnInit(): void {
    this.pessoaService.getPessoas().subscribe(res=> this.result = res)
+
   }
 
   apagar(id: number)

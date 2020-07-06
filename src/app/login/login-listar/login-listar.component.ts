@@ -14,6 +14,5 @@ export class LoginListarComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginService.get().subscribe(res=> this.result = res)
-    console.log(this.result)
   }
 }
