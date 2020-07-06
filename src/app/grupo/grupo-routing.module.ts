@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { GrupoLitarComponent } from './grupo-litar/grupo-litar.component';
+import { GrupoListaComponent } from './grupo-lista/grupo-lista.component';
+import { GrupoFormularioComponent } from './grupo-formulario/grupo-formulario.component';
 
 
 const routes: Routes = [
   {
     path:'',
-    component:GrupoLitarComponent
+    component: GrupoListaComponent
+  },
+  {
+    path:'form',
+    component: GrupoFormularioComponent
   }
 ];
 

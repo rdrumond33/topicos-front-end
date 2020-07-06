@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class PessoaService {
+export class GrupoService {
   private uri = 'https://localhost:5002/api/grupos'
 
   constructor(private http: HttpClient) { }

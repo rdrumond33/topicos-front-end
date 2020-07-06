@@ -37,4 +37,3 @@ export class AnotacaoFormularioComponent implements OnInit {
 
 }
 
-}

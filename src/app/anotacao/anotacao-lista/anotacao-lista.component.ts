@@ -9,10 +9,13 @@ import { AnotacaoService } from '../anotacao.service';
 })
 export class AnotacaoListaComponent implements OnInit {
   result: Anotacao[]
-  constructor(private anotacaoService: AnotacaoService) { }
+  constructor(private AnotacaoService: AnotacaoService) { }
 
   ngOnInit(): void {
-    this.anotacaoService.get().subscribe(res=> this.result = res)
+    this.AnotacaoService.getAnotacao().subscribe(res=> this.result = res)
   }
-
+  apagar(id: number)
+  {
+    this.AnotacaoService.deleteAnotacao(id).subscribe();
+  }
 }

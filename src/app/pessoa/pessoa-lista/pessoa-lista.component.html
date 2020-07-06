@@ -1,26 +1,18 @@
-  <div class="topo row p-2">
-      <h2>Lista de Usuários</h2>
-  </div>
-      <div class="m-2">
-          <button type="button" class="btn btn-primary" [routerLink]="['/pessoas/form']">Adicionar Novo</button>
-      </div>
-  <div class="card m-4 p-4">
-      <table class="table table-striped">
-          <thead>
-          <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Nome</th>
-              <th scope="col">Button</th>
-          </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let p of result">
-              <td>{{p.id}}</td>
-              <td>{{p.nome}}</td>
-              <td>
-                  <button type="button" class="btn btn-danger" (click)="apagar(p.id)" onclick="window.location.reload();" >Deletar</button>
-                </td>
-          </tr>
-          </tbody>
-      </table>
-  </div>
+<div class="col-xs-12" style="height: 50px;"></div>
+<div class="mx-auto" style="width: 1000px;">
+    <div>
+        <button type="button" class="btn btn-primary btn-lg" [routerLink]="['/pessoas/form']">Novo</button>
+    </div>
+    <br>
+    <div class="row">
+        <div class="mx auto col-sm-4" *ngFor="let pessoa of pessoas | async">
+            <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem ;">
+                <div class="card-body">
+                    <h5 class="card-title">Nome: {{ pessoa.id }}</h5>
+                    <h5 class="card-title">Nome: {{ pessoa.nome }}</h5>
+                    <a href="/pessoas" class="mr-1 btn btn-danger" (click)="apagar(pessoa.id)">Apagar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

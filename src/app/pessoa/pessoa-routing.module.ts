@@ -7,7 +7,7 @@ import { PessoaFormularioComponent } from './pessoa-formulario/pessoa-formulario
 const routes: Routes = [
   {
     path:'',
-    component:PessoaListaComponent
+    component: PessoaListaComponent
   },
   {
     path:'form',

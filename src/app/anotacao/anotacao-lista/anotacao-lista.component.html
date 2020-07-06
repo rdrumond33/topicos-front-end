@@ -1,8 +1,8 @@
 <div class="topo row p-2">
-  <h2>Lista de Usuários</h2>
+  <h2>Lista de Anotações</h2>
 </div>
   <div class="m-2">
-      <a href="file:///C:/Users/Marki/sistema/AtividadeFront/add.html"><button type="button" class="btn btn-primary">Adicionar Novo</button></a>
+    <button type="button" class="btn btn-primary" [routerLink]="['/anotacao']">Adicionar Novo</button>
   </div>
 <div class="card m-4 p-4">
   <table class="table table-striped">
@@ -11,8 +11,8 @@
           <th scope="col">ID</th>
           <th scope="col">obs</th>
           <th scope="col">data</th>
-          <th scope="col">id_grupo</th>
-          <th scope="col">id_pessoa</th>
+          <th scope="col">id do Grupo</th>
+          <th scope="col">id da Pessoa</th>
           <th scope="col">Button</th>
       </tr>
       </thead>

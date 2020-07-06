@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
 import { Anotacao } from './anotacao-interface';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class AnotacaoService {
 
   constructor(private http: HttpClient) { }
 
- getAnotacao(): Observable<Anotacao[]>{
+  getAnotacao(): Observable<Anotacao[]>{
     return this.http.get<Anotacao[]>(this.uri)
   }
 

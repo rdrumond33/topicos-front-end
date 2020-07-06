@@ -6,7 +6,7 @@ import { GrupoService } from '../grupo.service';
 
 @Component({
   selector: 'app-grupo-formulario',
-  templateUrl: './grupo-formulario.component.html',
+  templateUrl:'./grupo-formulario.component.html',
   styleUrls: ['./grupo-formulario.component.css']
 })
 export class GrupoFormularioComponent implements OnInit {
